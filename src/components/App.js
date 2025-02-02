@@ -1,38 +1,17 @@
-import { useState } from "react";
-import "./App.css"; // Import CSS file
 
-function App() {
+import React, { useState } from "react";
+import './../styles/App.css';
+
+const App = () => {
+
   const [name, setName] = useState("");
-  const [greeting, setGreeting] = useState("");
-
-  const handleInputChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleSubmit = () => {
-  if (name.trim() === "") {
-    setGreeting("Please enter a valid name.");
-  } else {
-    setGreeting(`Hello, ${name.trim()}!`);
-  }
-};
-
-
   return (
-    <div className="container">
-      <div className="card">
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={name}
-          onChange={handleInputChange}
-          className="input"
-        />
-        <button onClick={handleSubmit} className="button">Submit</button>
-        {greeting && <p className="greeting">{greeting}</p>}
-      </div>
+    <div>
+        <p>Enter your name:</p>
+        <input onChange={(e) => setName(e.target.value)}></input>
+        <p>{name}</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
