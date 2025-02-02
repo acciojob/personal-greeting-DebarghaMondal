@@ -10,12 +10,13 @@ function App() {
   };
 
   const handleSubmit = () => {
-    if (name.trim() === "") {
-      setGreeting("Please enter a valid name.");
-    } else {
-      setGreeting(`Hello, ${name}!`);
-    }
-  };
+  if (name.trim() === "") {
+    setGreeting("Please enter a valid name.");
+  } else {
+    setGreeting(`Hello, ${name.trim()}!`);
+  }
+};
+
 
   return (
     <div className="container">
